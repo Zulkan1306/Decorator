@@ -52,6 +52,7 @@ Espacio → saltar
   * Movimiento horizontal continuo (wrap-around)
 
 **Estructura del proyecto:**
+
 proyecto/
 │
 ├── main.py
