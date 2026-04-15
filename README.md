@@ -1,78 +1,56 @@
-# 🎮 Juego 2D en Pygame con Patrón Decorator
+Juego 2D en Pygame (Patrón Decorator)
+integrantes:
 
-Este proyecto es un juego 2D desarrollado en **Pygame** que implementa el **patrón de diseño Decorator** para gestionar modificadores dinámicos sobre un personaje.
+Sebastián Jaramillo Hernández - 20241020002
+Jhoe Luis Jeanpaul Miranda Alvarez - 20241020022
 
-El jugador puede moverse, saltar, recoger potenciadores y experimentar efectos visuales avanzados como partículas, animaciones y feedback visual en tiempo real.
+Este programa implementa un juego 2D desarrollado en Python utilizando la librería Pygame y el patrón de diseño Decorator para aplicar modificadores dinámicos a un personaje.
 
----
+El jugador puede moverse, saltar y recoger potenciadores que alteran su comportamiento en tiempo real, como aumento de velocidad, mejora de salto o activación de un escudo. El sistema permite que estos efectos se apliquen y se eliminen automáticamente después de cierto tiempo sin modificar la estructura base del personaje.
 
-## 🚀 Características
+El juego incluye animaciones con spritesheets, partículas dinámicas, efectos visuales, interfaz gráfica con barras de duración y objetos interactivos que aparecen aleatoriamente en el mapa.
 
-* 🧍‍♂️ Personaje con animaciones:
+Cómo usarlo:
+Ejecuta python main.py.
+Usa la flecha izquierda y derecha para moverte.
+Presiona la barra espaciadora para saltar.
+Recoge los objetos que aparecen en el mapa para activar modificadores.
+Observa las barras en la parte superior para ver la duración de cada efecto.
 
-  * Idle (inactivo)
-  * Walk (caminar)
-  * Run (correr con boost)
-  * Jump (salto)
+Controles:
+Flecha izquierda → mover a la izquierda
+Flecha derecha → mover a la derecha
+Espacio → saltar
 
-* ⚡ Sistema de modificadores (Decorator):
+Características principales:
 
-  * Velocidad
-  * Salto
-  * Escudo
+* Animaciones del personaje (idle, caminar, correr y salto) usando spritesheets de 8 frames
+* Sistema de modificadores implementado con el patrón Decorator
+* Potenciadores:
 
-* 🎨 Efectos visuales:
+  * Velocidad (aumenta movimiento y activa animación de correr)
+  * Salto (incrementa la altura del salto)
+  * Escudo (efecto visual de protección)
+* Sistema de partículas dinámico:
 
-  * Sistema de partículas dinámico
-  * Efectos en los pies del personaje
-  * Colores suaves y desvanecimiento (fade out)
+  * Partículas en los pies del personaje
+  * Colores suaves con desvanecimiento progresivo
+  * Movimiento realista (dirección y gravedad)
+* Interfaz (HUD):
 
-* 🟩 Interfaz (HUD):
-
-  * Barras de duración de modificadores
+  * Barras de duración de cada modificador
   * Colores según el tipo de potenciador
-
-* 🎁 Items:
+* Items:
 
   * Aparición aleatoria en el mapa
   * Animación flotante (movimiento senoidal)
-  * Activación por colisión
+  * Activación mediante colisión
+* Mundo:
 
-* 🌍 Mundo:
+  * Plataforma única en el suelo
+  * Movimiento horizontal continuo (wrap-around)
 
-  * Plataforma única
-  * Movimiento horizontal con "wrap-around" (sale por un lado y entra por el otro)
-
----
-
-## 🧠 Patrón Decorator
-
-El patrón Decorator permite añadir funcionalidades al jugador dinámicamente sin modificar su clase base.
-
-Ejemplo:
-
-* `VelocidadBoost` aumenta la velocidad
-* `SaltoBoost` modifica el salto
-* `Escudo` agrega efectos visuales y protección
-
-Cada modificador:
-
-* Tiene duración
-* Se aplica en tiempo real
-* Se elimina automáticamente al expirar
-
----
-
-## 🛠️ Tecnologías utilizadas
-
-* Python 3
-* Pygame
-
----
-
-## 📁 Estructura del proyecto
-
-```
+Estructura del proyecto:
 proyecto/
 │
 ├── main.py
@@ -90,78 +68,29 @@ proyecto/
 │   │
 │   └── background/
 │       └── fondo.png
-```
 
----
+Tecnologías utilizadas:
 
-## ▶️ Cómo ejecutar el proyecto
+* Python 3
+* Pygame
 
-1. Clona el repositorio:
+Patrón de diseño utilizado:
+El patrón Decorator permite añadir funcionalidades al personaje de forma dinámica sin modificar su clase base. Cada modificador actúa como una extensión temporal que cambia atributos como velocidad o salto y añade efectos visuales, manteniendo el código modular y escalable.
 
-```bash
-git clone https://github.com/tu-usuario/tu-repo.git
-```
+Cómo ejecutar el proyecto:
 
-2. Instala Pygame:
+1. Clona el repositorio
+2. Instala Pygame con pip install pygame
+3. Ejecuta python main.py
 
-```bash
-pip install pygame
-```
+Posibles mejoras futuras:
 
-3. Ejecuta el juego:
+* Enemigos con inteligencia artificial
+* Sonido y música
+* Fondo con efecto parallax
+* Menú de inicio y pausa
+* Efectos visuales avanzados (humo, fuego, partículas con imágenes)
 
-```bash
-python main.py
-```
-
----
-
-## 🎮 Controles
-
-* ⬅️ Flecha izquierda → Moverse a la izquierda
-* ➡️ Flecha derecha → Moverse a la derecha
-* ␣ Espacio → Saltar
-
----
-
-## ✨ Mejoras implementadas
-
-* Sistema de partículas realista
-* Animaciones con spritesheets (8 frames)
-* Items con movimiento flotante
-* HUD dinámico con colores
-* Código modular y escalable
-
----
-
-## 🚧 Posibles mejoras futuras
-
-* 👾 Enemigos con IA
-* 🎵 Sonido y música
-* 🌄 Fondo con parallax
-* 🎮 Menú de inicio y pausa
-* 💥 Efectos avanzados (humo, fuego)
-
----
-
-## 📸 Demo
-
-*(Puedes agregar aquí un GIF o imagen del juego)*
-
----
-
-## 📄 Licencia
-
-Este proyecto es de uso académico y educativo.
-
----
-
-## 👨‍💻 Autor
-
-Desarrollado como proyecto de aprendizaje aplicando:
-
-* Programación en Python
-* Desarrollo de videojuegos 2D
-* Patrones de diseño (Decorator)
+Este proyecto fue desarrollado con fines académicos para aplicar conceptos de programación orientada a objetos, desarrollo de videojuegos 2D y patrones de diseño.
 
 ---
